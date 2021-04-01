@@ -60,15 +60,15 @@
                                                     <action selector="tappedNumberButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="Ovc-Qq-WYV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCJ-B6-d6R" userLabel=",">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCJ-B6-d6R" userLabel="AC">
                                                 <rect key="frame" x="0.0" y="162" width="98.666666666666671" height="44"/>
                                                 <color key="backgroundColor" red="0.60392156860000001" green="0.57647058819999997" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <state key="normal" title=",">
+                                                <state key="normal" title="AC">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tappedSeparatorButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="SRf-wM-nYi"/>
+                                                    <action selector="tappedCorrectionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="SRf-wM-nYi"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -166,7 +166,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tappedRefreshButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="irV-Iv-wPB"/>
+                                                    <action selector="tappedCorrectionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="irV-Iv-wPB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -176,7 +176,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-Aw-e1h">
                                 <rect key="frame" x="25" y="774" width="364" height="63"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-P5-55X">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-P5-55X">
                                         <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="63"/>
                                         <color key="backgroundColor" red="0.46913260919999999" green="0.7149516575" blue="0.62407517239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
@@ -184,10 +184,10 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tappedAdditionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="V0J-eg-vQK"/>
+                                            <action selector="tappedOperandButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="Luf-dL-b7E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zr-HC-0N9">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zr-HC-0N9">
                                         <rect key="frame" x="75.666666666666671" y="0.0" width="61.000000000000014" height="63"/>
                                         <color key="backgroundColor" red="0.87294975829999999" green="0.37112226879999999" blue="0.32504552809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
@@ -195,10 +195,10 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tappedSubstractionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="KVX-AF-NVM"/>
+                                            <action selector="tappedOperandButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="zmY-zq-LAX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-Of-bCU" userLabel="*">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-Of-bCU" userLabel="*">
                                         <rect key="frame" x="151.66666666666666" y="0.0" width="60.666666666666657" height="63"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
@@ -206,18 +206,18 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tappedMultiplicationButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="hcP-oE-3Wh"/>
+                                            <action selector="tappedOperandButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="Uhr-Ix-T6L"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0p-em-Ubv" userLabel="/">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0p-em-Ubv" userLabel="/">
                                         <rect key="frame" x="227.33333333333337" y="0.0" width="61" height="63"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                        <state key="normal" title="÷">
+                                        <state key="normal" title="/">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="tappedDivisionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="N68-6N-u4v"/>
+                                            <action selector="tappedOperandButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="Exb-6r-Sdf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3h-Rg-teF">

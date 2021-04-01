@@ -12,34 +12,55 @@ class CalcManager {
     
     //MARK: Règles de calcul - Vérifie que toutes les règles soient respectées avant de calculer
     func expressionIsCorrectAndCanAddOperator(elements: [String]) -> Bool {
-        guard elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "*"
+        guard elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
         else { return false }
         return true
     }
-        
-        
-        func expressionHaveEnoughElement(elements: [String]) -> Bool {
+    
+    
+    func expressionHaveEnoughElement(elements: [String]) -> Bool {
         guard elements.count >= 3
         else { return false }
         return true
     }
-        
+    
     func expressionHaveResult(elements: [String]) -> Bool {
         guard elements.firstIndex(of: "=") != nil
         else { return false }
         return true
     }
     
+    func indexOfPrioOperand(table: [String]) -> Int? {
+        for element in table {
+            if element == "x" || element == "/" {
+                return table.firstIndex(of: element)
+            }
+        }
+        return nil
+    }
+    
     
     //MARK: Calculs
-    var resultat = 0
+    var resultat = 0.0
     
     func calculate(operationsToReduce: [String]) -> [String] {
         var table = operationsToReduce
+        
         while table.count > 1 {
-            let left = Int(table[0])!
-            let operand = table[1]
-            let right = Int(table[2])!
+            
+            var leftIndex = 0
+            var operandIndex = 1
+            var rightIndex = 2
+            
+            if let index = indexOfPrioOperand(table: table) {
+                leftIndex = index - 1
+                operandIndex = index
+                rightIndex = index + 1
+            }
+            
+            let left = Double(table[leftIndex])!
+            let operand = table[operandIndex]
+            let right = Double(table[rightIndex])!
             
             
             switch operand {
@@ -49,14 +70,10 @@ class CalcManager {
             case "/": resultat = left / right
             default: fatalError("Unknown operator !")
             }
-           
-            table = Array(table.dropFirst(3))
-            table.insert("\(resultat)", at: 0)
+            
+            table.removeSubrange(leftIndex...rightIndex)
+            table.insert("\(resultat)", at: leftIndex)
         }
         return table
     }
 }
-
-// Ajouter les prio de calculs
-// Si un opérateur est égal à x ou / effectue ces opérations en premier
-
