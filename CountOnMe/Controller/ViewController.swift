@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     var calculManager = CalcManager()
     
     var elements: [String] {
-        return textView.text.split(separator: " ").map { "\($0)" }
+        return self.textView.text.split(separator: " ").map { "\($0)" }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = ""
+        self.textView.text = ""
     }
     
     
@@ -35,44 +35,43 @@ class ViewController: UIViewController {
         guard let numberText = sender.title(for: .normal) else {
             return
         }
-        if calculManager.expressionHaveResult(elements: elements) {
-            textView.text = ""
+        if self.calculManager.expressionHaveResult(elements: elements) {
+            self.textView.text = ""
         }
-        if elements.last == "/" {
-            if numberText.last == "0" {
-                errorNotification(notif: .impossibleCalcul)
-            }
+        if self.calculManager.isDivisionByZero(elements: elements, currentElement: numberText) {
+            self.errorNotification(notif: .impossibleCalcul)
+        } else {
+            self.textView.text.append(numberText)
         }
-        textView.text.append(numberText)
     }
-    
+
     @IBAction func tappedOperandButton(_ sender: UIButton) {
         guard let operandText = sender.title(for: .normal) else {
             return
         }
-        if calculManager.expressionIsCorrectAndCanAddOperator(elements: elements) {
-            textView.text.append(" \(operandText) ")
+        if self.calculManager.expressionIsCorrectAndCanAddOperator(elements: elements) {
+            self.textView.text.append(" \(operandText) ")
         } else {
-            errorNotification(notif: .operatorAlreadyHere)
+            self.errorNotification(notif: .operatorAlreadyHere)
         }
     }
     
     @IBAction func tappedEqualButton(_ sender: UIButton) {
-        guard calculManager.expressionIsCorrectAndCanAddOperator(elements: elements) else {
+        guard self.calculManager.expressionIsCorrectAndCanAddOperator(elements: elements) else {
             return errorNotification(notif: .correctExpression)
         }
-        guard calculManager.expressionHaveEnoughElement(elements: elements) else {
+        guard self.calculManager.expressionHaveEnoughElement(elements: elements) else {
             return errorNotification(notif: .newCalcul)
         }
         self.textView.text.append(" = \(calculManager.calculate(operationsToReduce: elements).first!)")
     }
     
     @IBAction func tappedCorrectionButton(_ sender: UIButton) {
-        textView.deleteBackward()
+        self.textView.deleteBackward()
     }
     
     @IBAction func tappedRefreshButton(_ sender: Any) {
-        textView.text.removeAll()
+        self.textView.text.removeAll()
     }
     
     //MARK: Errors Notifications

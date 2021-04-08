@@ -17,7 +17,6 @@ class CalcManager {
         return true
     }
     
-    
     func expressionHaveEnoughElement(elements: [String]) -> Bool {
         guard elements.count >= 3
         else { return false }
@@ -37,6 +36,14 @@ class CalcManager {
             }
         }
         return nil
+    }
+    
+    func isDivisionByZero(elements: [String], currentElement: String ) -> Bool {
+        if elements.last == "/" && currentElement == "0" {
+                return true
+        } else {
+            return false
+        }
     }
     
     
@@ -61,7 +68,6 @@ class CalcManager {
             let left = Double(table[leftIndex])!
             let operand = table[operandIndex]
             let right = Double(table[rightIndex])!
-            
             
             switch operand {
             case "+": resultat = left + right

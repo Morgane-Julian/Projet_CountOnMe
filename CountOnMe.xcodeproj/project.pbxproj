@@ -12,6 +12,7 @@
 		1FA43BD8224E569900F565CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BD6224E569900F565CB /* Main.storyboard */; };
 		1FA43BDA224E569A00F565CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BD9224E569A00F565CB /* Assets.xcassets */; };
 		1FA43BDD224E569A00F565CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */; };
+		7B949E242617455C006D4F55 /* ViewControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B949E232617455C006D4F55 /* ViewControllerTestCase.swift */; };
 		7BA2642526026670003A7D71 /* CalcManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2642426026670003A7D71 /* CalcManager.swift */; };
 		7BC11F3E26160EC700898AA8 /* CalcManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC11F3D26160EC700898AA8 /* CalcManagerTestCase.swift */; };
 /* End PBXBuildFile section */
@@ -34,8 +35,9 @@
 		1FA43BD9224E569A00F565CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA43BDC224E569A00F565CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FA43BDE224E569A00F565CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
-		1FA43BE3224E569A00F565CB /* CountOnMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA43BE3224E569A00F565CB /* CountOnMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CountOnMe.app; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA43BE9224E569A00F565CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CountOnMeTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		7B949E232617455C006D4F55 /* ViewControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTestCase.swift; sourceTree = "<group>"; };
 		7BA2642426026670003A7D71 /* CalcManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcManager.swift; sourceTree = "<group>"; };
 		7BC11F3D26160EC700898AA8 /* CalcManagerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalcManagerTestCase.swift; path = CountOnMeTests/CalcManagerTestCase.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -72,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA43BCF224E569900F565CB /* CountOnMe.app */,
-				1FA43BE3224E569A00F565CB /* CountOnMeTests.xctest */,
+				1FA43BE3224E569A00F565CB /* CountOnMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +94,7 @@
 			children = (
 				1FA43BE9224E569A00F565CB /* Info.plist */,
 				7BC11F3D26160EC700898AA8 /* CalcManagerTestCase.swift */,
+				7B949E232617455C006D4F55 /* ViewControllerTestCase.swift */,
 			);
 			path = CountOnMeTests;
 			sourceTree = "<group>";
@@ -166,7 +169,7 @@
 			);
 			name = CountOnMeTests;
 			productName = SimpleCalcTests;
-			productReference = 1FA43BE3224E569A00F565CB /* CountOnMeTests.xctest */;
+			productReference = 1FA43BE3224E569A00F565CB /* CountOnMe.app */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +178,7 @@
 		1FA43BC7224E569900F565CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Vincent Saluzzo";
 				TargetAttributes = {
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B949E242617455C006D4F55 /* ViewControllerTestCase.swift in Sources */,
 				7BC11F3E26160EC700898AA8 /* CalcManagerTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
