@@ -18,6 +18,10 @@ enum ErrorMessage : String {
 class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
+    @IBOutlet var operandButtons: [UIButton]!
+    @IBOutlet weak var equalButton: UIButton!
+    @IBOutlet weak var correctionButton: UIButton!
+    @IBOutlet weak var refreshButton: UIButton!
     var calculManager = CalcManager()
     
     var elements: [String] {

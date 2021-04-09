@@ -90,5 +90,12 @@ let calculManager = CalcManager()
         let table = ["2","x","3","=","6"]
         XCTAssert(calculManager.expressionHaveResult(elements: table) == true)
     }
+    
+    func testIsDivisionByZero() {
+        let table = ["2","/"]
+        let currentElement = "0"
+        
+        XCTAssert(calculManager.isDivisionByZero(elements: table, currentElement: currentElement) == true)
+    }
 
 }
