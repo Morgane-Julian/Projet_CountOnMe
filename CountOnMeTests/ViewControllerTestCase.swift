@@ -18,11 +18,11 @@ class ViewControllerTestCase: XCTestCase {
 
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             controller = storyboard.instantiateInitialViewController() as! ViewController
+            let _ = controller.view
         }
-
     
     func testTappedNumberButton() {
-        let _ = controller.view
+        
         controller.numberButtons.last?.sendActions(for: .touchUpInside)
         let button = controller.numberButtons.last
         
@@ -30,7 +30,7 @@ class ViewControllerTestCase: XCTestCase {
     }
     
     func testGivenNumberWhenOperatorThenErrorNotification() {
-        let _ = controller.view
+        
         controller.numberButtons.last?.sendActions(for: .touchUpInside)
         let button = controller.numberButtons.last?.currentTitle
         controller.textView.text.append(button!)
@@ -42,9 +42,7 @@ class ViewControllerTestCase: XCTestCase {
         XCTAssert(controller.tappedOperandButton(controller.operandButtons.last!) == controller.errorNotification(notif: .operatorAlreadyHere))
     }
     
-    func testGivenCalculWhenTapOnEqualThenTextViewAppendEqualSignAndProgramDoTheCalc() {
-        let _ = controller.view
-        
+    func testGivenCalculWhenTapOnEqualThenTextViewAppendEqual() {
         
         controller.numberButtons.last?.sendActions(for: .touchUpInside)
         let button = controller.numberButtons.first?.currentTitle
@@ -54,12 +52,10 @@ class ViewControllerTestCase: XCTestCase {
         let operandButton = controller.operandButtons.first?.title(for: .normal)
         controller.textView.text.append(operandButton!)
        
-        XCTAssert(controller.tappedEqualButton(controller.equalButton) == controller.errorNotification(notif: .correctExpression))
+        XCTAssert(controller.tappedEqualButton(controller.equalButton) == controller.errorNotification(notif: .incorrectExpression))
     }
     
     func testGivenElementsWhenTappedCorrectionButtonThenLastElementIsDelete() {
-        let _ = controller.view
-        
         
         controller.numberButtons.last?.sendActions(for: .touchUpInside)
         let button = controller.numberButtons.first?.currentTitle
@@ -69,8 +65,6 @@ class ViewControllerTestCase: XCTestCase {
     }
     
     func testGivenElementsWhenTappedRefreshButtonThenElementsAreDeleted() {
-        let _ = controller.view
-        
         
         controller.numberButtons.last?.sendActions(for: .touchUpInside)
         let button = controller.numberButtons.first?.currentTitle

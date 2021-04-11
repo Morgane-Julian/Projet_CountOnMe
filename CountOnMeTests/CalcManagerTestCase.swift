@@ -55,7 +55,7 @@ let calculManager = CalcManager()
         XCTAssert(calculManager.calculate(operationsToReduce: table).first == "7.5")
     }
     
-    func testPositiveNumberAndNegativeNumber() {
+    func testNegativeResult() {
         let table = ["2","-","4"]
        
         XCTAssert(calculManager.calculate(operationsToReduce: table).first == "-2.0")

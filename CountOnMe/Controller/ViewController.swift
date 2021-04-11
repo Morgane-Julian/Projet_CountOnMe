@@ -10,7 +10,7 @@ import UIKit
 
 enum ErrorMessage : String {
     case newCalcul = "Démarrez un nouveau calcul !"
-    case correctExpression = "Entrez une expression correcte !"
+    case incorrectExpression = "Entrez une expression correcte !"
     case operatorAlreadyHere = "Un operateur est déja mis !"
     case impossibleCalcul = "Impossible d'effectuer ce calcul, vérifiez votre saisie."
 }
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     @IBAction func tappedEqualButton(_ sender: UIButton) {
         guard self.calculManager.expressionIsCorrectAndCanAddOperator(elements: elements) else {
-            return errorNotification(notif: .correctExpression)
+            return errorNotification(notif: .incorrectExpression)
         }
         guard self.calculManager.expressionHaveEnoughElement(elements: elements) else {
             return errorNotification(notif: .newCalcul)
