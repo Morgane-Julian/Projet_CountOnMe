@@ -9,10 +9,10 @@
 import UIKit
 
 enum ErrorMessage : String {
-    case newCalcul = "Démarrez un nouveau calcul !"
-    case incorrectExpression = "Entrez une expression correcte !"
-    case operatorAlreadyHere = "Un operateur est déja mis !"
-    case impossibleCalcul = "Impossible d'effectuer ce calcul, vérifiez votre saisie."
+    case newCalcul = "Start a new calculation !"
+    case incorrectExpression = "Enter a correct expression !"
+    case operatorAlreadyHere = "An operator is already set !"
+    case impossibleCalcul = "Unable to perform this calculation, check your entry."
 }
 
 class ViewController: UIViewController {
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var equalButton: UIButton!
     @IBOutlet weak var correctionButton: UIButton!
     @IBOutlet weak var refreshButton: UIButton!
+    
     var calculManager = CalcManager()
     
     var elements: [String] {

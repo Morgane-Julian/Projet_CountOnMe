@@ -10,7 +10,8 @@ import Foundation
 
 class CalcManager {
     
-    //MARK: Règles de calcul - Vérifie que toutes les règles soient respectées avant de calculer
+    //MARK: Calculation rules
+    
     func expressionIsCorrectAndCanAddOperator(elements: [String]) -> Bool {
         guard elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "x"
         else { return false }
@@ -47,7 +48,8 @@ class CalcManager {
     }
     
     
-    //MARK: Calculs
+    //MARK: Calculation
+    
     var resultat = 0.0
     
     func calculate(operationsToReduce: [String]) -> [String] {
